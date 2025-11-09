@@ -3,13 +3,21 @@ import sys
 import requests
 import pandas as pd
 from datetime import datetime, timedelta, date
+from dotenv import load_dotenv
 from src.logger import logging
 from src.exception import CustomException
 
-LAT, LON = 24.8607, 67.0011
-OPENWEATHER_KEY = "ee71f9d0a53f2fbc1b2e122a39540635"
-OUTPUT_FILE = "notebook/data/merged_aqi_data.csv"
-FETCH_DAYS = 90
+# Load environment variables
+load_dotenv()
+
+# Configuration from environment variables
+LAT = float(os.getenv("LATITUDE", "24.8607"))
+LON = float(os.getenv("LONGITUDE", "67.0011"))
+OPENWEATHER_KEY = os.getenv("OPENWEATHER_API_KEY", "")
+if not OPENWEATHER_KEY:
+    raise ValueError("OPENWEATHER_API_KEY environment variable is required. Please set it in .env file")
+OUTPUT_FILE = os.getenv("DATA_OUTPUT_PATH", "notebook/data/merged_aqi_data.csv")
+FETCH_DAYS = int(os.getenv("FETCH_DAYS", "90"))
 
 def safe_request(url):
     try:

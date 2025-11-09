@@ -1,0 +1,53 @@
+name: Training Pipeline - Daily
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/pipeline/training_pipeline.py'
+
+jobs:
+  run-training-pipeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run Training Pipeline
+        run: |
+          python src/pipeline/training_pipeline.py
+      
+      - name: Upload models
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: trained-models
+          path: |
+            models/*.pkl
+            models/registry/
+      
+      - name: Commit and push models
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add models/
+          git diff --staged --quiet || git commit -m "Auto-update: Trained models [skip ci]"
+          git push
+

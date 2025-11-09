@@ -1,0 +1,222 @@
+{
+  "models": [
+    {
+      "model_name": "aqi_classifier",
+      "model_type": "classifier",
+      "version": 1,
+      "timestamp": "2025-11-09T12:31:38.110539",
+      "model_path": "notebook\\models\\registry\\aqi_classifier_v1.pkl",
+      "metrics": {
+        "accuracy": 1.0,
+        "f1_score": 1.0
+      },
+      "params": {
+        "n_estimators": 200,
+        "model": "XGBClassifier"
+      }
+    },
+    {
+      "model_name": "aqi_regressor",
+      "model_type": "regressor",
+      "version": 1,
+      "timestamp": "2025-11-09T12:31:38.122606",
+      "model_path": "notebook\\models\\registry\\aqi_regressor_v1.pkl",
+      "metrics": {
+        "mae": 9.771815327278925e-09,
+        "rmse": 2.148431415689414e-16,
+        "r2": 0.9999999999999994
+      },
+      "params": {
+        "n_estimators": 300,
+        "model": "GradientBoostingRegressor"
+      }
+    },
+    {
+      "model_name": "scaler",
+      "model_type": "preprocessor",
+      "version": 1,
+      "timestamp": "2025-11-09T12:31:38.124238",
+      "model_path": "notebook\\models\\registry\\scaler_v1.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "reg_scaler",
+      "model_type": "preprocessor",
+      "version": 1,
+      "timestamp": "2025-11-09T12:31:38.125598",
+      "model_path": "notebook\\models\\registry\\reg_scaler_v1.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "aqi_classifier",
+      "model_type": "classifier",
+      "version": 2,
+      "timestamp": "2025-11-09T12:31:50.281348",
+      "model_path": "notebook\\models\\registry\\aqi_classifier_v2.pkl",
+      "metrics": {
+        "accuracy": 1.0,
+        "f1_score": 1.0
+      },
+      "params": {
+        "n_estimators": 200,
+        "model": "XGBClassifier"
+      }
+    },
+    {
+      "model_name": "aqi_regressor",
+      "model_type": "regressor",
+      "version": 2,
+      "timestamp": "2025-11-09T12:31:50.293355",
+      "model_path": "notebook\\models\\registry\\aqi_regressor_v2.pkl",
+      "metrics": {
+        "mae": 9.771815327278925e-09,
+        "rmse": 2.148431415689414e-16,
+        "r2": 0.9999999999999994
+      },
+      "params": {
+        "n_estimators": 300,
+        "model": "GradientBoostingRegressor"
+      }
+    },
+    {
+      "model_name": "scaler",
+      "model_type": "preprocessor",
+      "version": 2,
+      "timestamp": "2025-11-09T12:31:50.295500",
+      "model_path": "notebook\\models\\registry\\scaler_v2.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "reg_scaler",
+      "model_type": "preprocessor",
+      "version": 2,
+      "timestamp": "2025-11-09T12:31:50.297477",
+      "model_path": "notebook\\models\\registry\\reg_scaler_v2.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "aqi_classifier",
+      "model_type": "classifier",
+      "version": 3,
+      "timestamp": "2025-11-09T12:51:39.033411",
+      "model_path": "notebook\\models\\registry\\aqi_classifier_v3.pkl",
+      "metrics": {
+        "accuracy": 0.9895287958115183,
+        "f1_score": 0.9857064776778429
+      },
+      "params": {
+        "n_estimators": 200,
+        "model": "XGBClassifier"
+      }
+    },
+    {
+      "model_name": "aqi_regressor",
+      "model_type": "regressor",
+      "version": 3,
+      "timestamp": "2025-11-09T12:51:39.052164",
+      "model_path": "notebook\\models\\registry\\aqi_regressor_v3.pkl",
+      "metrics": {
+        "mae": 0.009903808508655828,
+        "rmse": 0.0020530237926604847,
+        "r2": 0.9982133608225131
+      },
+      "params": {
+        "n_estimators": 300,
+        "model": "GradientBoostingRegressor"
+      }
+    },
+    {
+      "model_name": "scaler",
+      "model_type": "preprocessor",
+      "version": 3,
+      "timestamp": "2025-11-09T12:51:39.055148",
+      "model_path": "notebook\\models\\registry\\scaler_v3.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "reg_scaler",
+      "model_type": "preprocessor",
+      "version": 3,
+      "timestamp": "2025-11-09T12:51:39.061535",
+      "model_path": "notebook\\models\\registry\\reg_scaler_v3.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "aqi_classifier",
+      "model_type": "classifier",
+      "version": 4,
+      "timestamp": "2025-11-09T12:53:07.465462",
+      "model_path": "notebook\\models\\registry\\aqi_classifier_v4.pkl",
+      "metrics": {
+        "accuracy": 0.9895287958115183,
+        "f1_score": 0.9857064776778429
+      },
+      "params": {
+        "n_estimators": 200,
+        "model": "XGBClassifier"
+      }
+    },
+    {
+      "model_name": "aqi_regressor",
+      "model_type": "regressor",
+      "version": 4,
+      "timestamp": "2025-11-09T12:53:07.484260",
+      "model_path": "notebook\\models\\registry\\aqi_regressor_v4.pkl",
+      "metrics": {
+        "mae": 0.011144863978636805,
+        "rmse": 0.0023483677974474914,
+        "r2": 0.9979563383897119
+      },
+      "params": {
+        "n_estimators": 300,
+        "model": "GradientBoostingRegressor"
+      }
+    },
+    {
+      "model_name": "scaler",
+      "model_type": "preprocessor",
+      "version": 4,
+      "timestamp": "2025-11-09T12:53:07.489849",
+      "model_path": "notebook\\models\\registry\\scaler_v4.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    },
+    {
+      "model_name": "reg_scaler",
+      "model_type": "preprocessor",
+      "version": 4,
+      "timestamp": "2025-11-09T12:53:07.493160",
+      "model_path": "notebook\\models\\registry\\reg_scaler_v4.pkl",
+      "metrics": {},
+      "params": {
+        "type": "StandardScaler"
+      }
+    }
+  ],
+  "latest_version": {
+    "aqi_classifier": 4,
+    "aqi_regressor": 4,
+    "scaler": 4,
+    "reg_scaler": 4
+  }
+}

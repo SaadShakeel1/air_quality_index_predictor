@@ -1,0 +1,46 @@
+name: CI - Tests and Linting
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Check model files
+        run: |
+          python check_models.py
+      
+      - name: Test feature pipeline import
+        run: |
+          python -c "from src.pipeline.feature_pipeline import run_feature_pipeline; print('Feature pipeline import OK')"
+      
+      - name: Test training pipeline import
+        run: |
+          python -c "from src.pipeline.training_pipeline import run_training_pipeline; print('Training pipeline import OK')"
+      
+      - name: Test model registry import
+        run: |
+          python -c "from src.components.model_registry import ModelRegistry; print('Model registry import OK')"
+      
+      - name: Test feature store import
+        run: |
+          python -c "from src.components.feature_store import FeatureStore; print('Feature store import OK')"
+
